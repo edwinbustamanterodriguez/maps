@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <form name="editForm" role="form" novalidate [formGroup]="editForm"></form>
+    <div class="form-group col-sm-12 pb-3">
+      <label class="form-control-label" for="field_address">Dirección</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="address" id="field_address" data-cy="address" formControlName="address" />
+        <div class="input-group-append" role="button">
+          <span class="input-group-text"> <fa-icon [icon]="faMapMarked" (click)="openMapDialog()"></fa-icon>&nbsp; </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 300px;"
+       leaflet
+       [leafletLayers]="layers"
+       [leafletOptions]="options"
+  >
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title" data-cy="medicalStudiesUpdateHeading">
+    MAPS LEAFLET PICKER
+  </h4>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="cancel()">&times;</button>
+</div>
+
+<div class="modal-body">
+  <div style="height: 300px;"
+       leaflet
+       (leafletClick)="clickEvent($event)"
+       [leafletLayers]="layers"
+       [leafletOptions]="options">
+  </div>
+
+  <h6 *ngIf="inominatim">{{inominatim.display_name}}</h6>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="cancel()">CANCELAR</button>
+  <button type="button" class="btn btn-primary" (click)="save()">GUARDAR</button>
+</div>
+
